@@ -1,0 +1,32 @@
+<%- contentFor('body') %>
+<div class="alert alert-primary" role="alert"><h4>Usuários</h4></div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Login</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+        <% for(d of data) {%>
+            <tr>
+                <th><%- d.nome %></th>
+                <th><%- d.login %></th>
+                <th><%- d.email %></th>
+                <td><a href="/edit_usuarios"class="btn btn-warning rounded-circle">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+                <td><button type="button" class="btn btn-danger rounded-circle">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+<div class="fixed-bottom">
+    <a href="/add_usuarios" class="btn-lg btn-primary float-right rounded-circle"
+    style="margin-bottom: 2em; margin-right: 2em;"><span class="glyphicon glyphicon-plus"
+    aria-hidden="true"></span></a>
+</div>
